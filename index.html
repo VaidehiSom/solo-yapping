@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>Solo Yapping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Solo Yapping home">
+      <span class="brand-mark">SY</span>
+      <strong>Solo Yapping</strong>
+    </a>
+    <button id="refresh-button" class="button button-quiet" type="button">Refresh</button>
+  </header>
+
+  <main class="page-shell">
+    <section class="stats-grid" aria-label="Mission progress">
+      <article class="stat-card"><span class="stat-label">Completed</span><strong id="completed-count">0</strong></article>
+      <article class="stat-card"><span class="stat-label">Bookmarked</span><strong id="bookmarked-count">0</strong></article>
+      <article class="stat-card"><span class="stat-label">Available</span><strong id="available-count">0</strong></article>
+    </section>
+
+    <section id="mission-library" class="library-section">
+      <div class="section-heading">
+        <h1>Missions</h1>
+        <span id="mission-total" class="subtle-count">0 missions</span>
+      </div>
+
+      <div class="filters">
+        <label class="search-field">
+          <span class="sr-only">Search missions</span>
+          <input id="search-input" type="search" placeholder="Search missions…" autocomplete="off">
+        </label>
+        <details class="filter-menu">
+          <summary>Filter</summary>
+          <div class="filter-menu-content">
+            <label class="toggle-filter"><input id="bookmarked-filter" type="checkbox"><span>Bookmarked only</span></label>
+            <label class="toggle-filter"><input id="hide-completed-filter" type="checkbox"><span>Hide completed</span></label>
+          </div>
+        </details>
+      </div>
+
+      <div id="mission-grid" class="mission-grid" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state hidden">No missions found.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
